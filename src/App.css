@@ -1,0 +1,9 @@
+body {
+  text-align: center;
+}
+
+.counter-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30%;
+}
