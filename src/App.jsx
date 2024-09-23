@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
-  const [steps, setSteps] = useState(0);
+  const [steps, setSteps] = useState(1);
   // const date
   const date = new Date();
   date.setDate(date.getDate() + count);
@@ -52,12 +52,16 @@ function App() {
           </div>
         </div>
         <h1>
-          {" "}
-          {`${count === 0 ? "Today is " : ""} ${
-            count > 1 ? `${count} Days to` : ""
-          } ${
-            count < -1 ? `${Math.abs(count)} Days ago` : ""
-          } ${date.toDateString()}`}
+          <span>
+            {count === 0
+              ? "Today is"
+              : count > 0
+              ? `${count} Days from`
+              : count < 0
+              ? `${Math.abs(count)} Days ago`
+              : ""}
+          </span>{" "}
+          <span>{date.toDateString()}</span>
         </h1>
       </div>
     </>
