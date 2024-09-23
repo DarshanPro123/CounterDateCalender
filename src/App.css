@@ -6,4 +6,12 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 30%;
+  color: black;
+  font-size: 2rem;
+}
+
+.counter-box button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
 }
