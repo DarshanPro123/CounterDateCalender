@@ -4,7 +4,8 @@ body {
 
 .counter-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   margin: 0 30%;
   color: black;
   font-size: 2rem;
@@ -12,6 +13,8 @@ body {
 
 .counter-box button {
   padding: 10px 20px;
+  width: 120px;
+  border-radius: 50%;
   font-size: 1.2rem;
   border: none;
 }

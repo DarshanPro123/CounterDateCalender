@@ -5,11 +5,11 @@ function App() {
   const [count, setCount] = useState(0);
   // const date
   const date = new Date();
-  const today = date.toLocaleDateString();
-  console.log(today);
+  date.setDate(date.getDate() + count);
+  console.log(date);
   const decreseCount = () => {
     {
-      count > 0 ? setCount((c) => c - 1) : count;
+      count > -20 ? setCount((c) => c - 1) : count;
     }
   };
   const increseCount = () => {
@@ -26,7 +26,14 @@ function App() {
           <h2>{count}</h2>
           <button onClick={increseCount}> + </button>
         </div>
-        <h1>Today Current Date is : {today}</h1>
+        <h1>
+          {" "}
+          {`${count === 0 ? "Today is " : ""} ${
+            count > 1 ? `${count} Days to` : ""
+          } ${
+            count < -1 ? `${Math.abs(count)} Days ago` : ""
+          } ${date.toDateString()}`}
+        </h1>
       </div>
     </>
   );
