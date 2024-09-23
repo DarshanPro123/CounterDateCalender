@@ -20,16 +20,16 @@ function App() {
     }
   };
 
-  const decreseSteps = () => {
-    {
-      steps > 0 ? setSteps((stp) => stp - 1) : steps;
-    }
-  };
-  const increseSteps = () => {
-    {
-      steps < 20 ? setSteps((stp) => stp + 1) : alert("No more , warning!! 🥵");
-    }
-  };
+  // const decreseSteps = () => {
+  //   {
+  //     steps > 0 ? setSteps((stp) => stp - 1) : steps;
+  //   }
+  // };
+  // const increseSteps = () => {
+  //   {
+  //     steps < 20 ? setSteps((stp) => stp + 1) : alert("No more , warning!! 🥵");
+  //   }
+  // };
 
   return (
     <>
@@ -38,16 +38,27 @@ function App() {
           <h3>Steps:</h3>
           <div className="btns">
             {" "}
-            <button onClick={decreseSteps}>-</button>
-            <h2>{steps}</h2>
-            <button onClick={increseSteps}>+</button>
+            {/* <button onClick={decreseSteps}>-</button> */}
+            <input
+              type="range"
+              max={10}
+              min={1}
+              value={steps}
+              onChange={(e) => setSteps(Number(e.target.value))}
+            />
+            <span>Steps : {steps}</span>
+            {/* <button onClick={increseSteps}>+</button> */}
           </div>
         </div>
         <div className="counter-box">
           <h3>Counter</h3>
           <div className="btns">
             <button onClick={decreseCount}> - </button>
-            <h2>{count}</h2>
+            <input
+              type="text"
+              value={count}
+              onChange={(e) => setCount(Number(e.target.value))}
+            />
             <button onClick={increseCount}> + </button>
           </div>
         </div>
